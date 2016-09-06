@@ -4,4 +4,4 @@ In this repository you will find all services necessaries to run your contact-li
 
 ## API
 
-See [./user-api/README.md](README.md) for more information.
+See [README.md](./user-api/README.md) for more information.
