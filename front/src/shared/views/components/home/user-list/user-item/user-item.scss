@@ -1,0 +1,26 @@
+@import 'variables.scss';
+
+.UserItem {
+  &:hover {
+    background-color: $primaryBackgroundColor;
+  }
+  a {
+    color: $defaultTextColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    span {
+
+    }
+
+    .arrow {
+      margin-right: 10px;
+      max-height: 15px;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+.sonar
+node_modules
+dist
+.idea

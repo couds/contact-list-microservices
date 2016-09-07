@@ -1,0 +1,41 @@
+{
+  "name": "user-api",
+  "version": "1.0.0",
+  "description": "Basic RESTful User Management API",
+  "main": "dist/app.js",
+  "author": "Red Hat",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src/ --out-dir dist/ --copy-files",
+    "start": "NODE_CONFIG_DIR=./dist/config NODE_PATH=./dist NODE_ENV=production node .",
+    "seed": "NODE_CONFIG_DIR=./src/config NODE_PATH=./src NODE_ENV=develop node ./src/seed/seed.js",
+    "start:dev": "NODE_CONFIG_DIR=./src/config NODE_PATH=./src NODE_ENV=develop nodemon ./src/app.js",
+    "seed:dev": "NODE_PATH=./src NODE_ENV=develop node ./src/seed/seed.js",
+    "start:dev:debug": "DEBUG=swagger-tools:middleware:validator NODE_CONFIG_DIR=./src/config NODE_PATH=./src nodemon src/app.js",
+    "test": "NODE_CONFIG_DIR=./src/config NODE_PATH=./src NODE_ENV=develop  ./node_modules/mocha/bin/mocha ./tests/accept/*.js --timeout 15000"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "config": "^1.21.0",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.9",
+    "mongoose-seed": "^0.3.1",
+    "morgan": "^1.7.0",
+    "swagger-express-mw": "^0.1.0",
+    "swagger-tools": "^0.10.1",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.10.1",
+    "babel-core": "6.4.0",
+    "babel-eslint": "6.0.5",
+    "babel-preset-es2015": "6.3.13",
+    "babel-register": "6.11.6",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "2.3.0",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.2"
+  }
+}

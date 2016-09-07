@@ -1,0 +1,17 @@
+@import 'variables.scss';
+
+.UserList {
+  .list {
+    margin: 20px 0 0 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: solid $primaryBackgroundColor 1px;
+    border-radius: 10px;
+    > li {
+      border-bottom: solid $primaryBackgroundColor 1px;
+      cursor: pointer;
+    }
+  }
+}
