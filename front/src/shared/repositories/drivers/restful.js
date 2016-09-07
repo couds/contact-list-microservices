@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = process.env.API;
+const api = process.env.API || 'http://localhost:8000/';
 
 export default {
   get: (request) => (

@@ -4,10 +4,10 @@
   "private": true,
   "main": "bin/www",
   "scripts": {
-    "start": "API=http://localhost:8000/  NODE_CONFIG_DIR=./dist/config NODE_ENV=production NODE_PATH=NODE_PATH:./dist/shared:./dist/server node dist/server",
-    "start:dev": "API=http://localhost:8000/ NODE_CONFIG_DIR=./src/config nodemon .",
-    "webpack": "API=http://localhost:8000/ NODE_CONFIG_DIR=./src/config NODE_PATH=NODE_PATH:./src/shared:./src/server webpack-dev-server --no-info --config webpack.config.js",
-    "build:webpack": "API=http://localhost:8000/  NODE_ENV=production NODE_PATH=NODE_PATH:./dist/shared:./dist/server webpack --config webpack.config.production.js --progress --profile --color -p",
+    "start": "NODE_CONFIG_DIR=./dist/config NODE_ENV=production NODE_PATH=NODE_PATH:./dist/shared:./dist/server node dist/server",
+    "start:dev": "NODE_CONFIG_DIR=./src/config nodemon .",
+    "webpack": "NODE_CONFIG_DIR=./src/config NODE_PATH=NODE_PATH:./src/shared:./src/server webpack-dev-server --no-info --config webpack.config.js",
+    "build:webpack": "NODE_ENV=production NODE_PATH=NODE_PATH:./dist/shared:./dist/server webpack --config webpack.config.production.js --progress --profile --color -p",
     "build:node": "babel -s inline -D src/ -d dist",
     "build": "npm run build:node && npm run build:webpack",
     "lint": "NODE_PATH=NODE_PATH:./src/shared:./src/server  eslint src"
