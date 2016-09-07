@@ -15,7 +15,7 @@ import helmet from 'helmet';
 //  React Router
 
 import { match, RouterContext } from 'react-router';
-import routes from 'routes';
+import getRoutes from 'routes';
 
 //  REDUX
 
@@ -66,11 +66,10 @@ if (process.env.NODE_ENV !== 'production' || process.env.WEBPACK_DEV) {
   });
 } else {
   app.use('/static', express.static(path.resolve(
-    path.join(__dirname, '..', 'public/')
+    path.join(__dirname, '..', 'client/public/')
   )));
 }
 
-app.use(helmet.noCache({ noEtag: true }));
 app.use(helmet());
 
 app.use((req, res, next) => {
@@ -78,7 +77,7 @@ app.use((req, res, next) => {
   req.store = createStore();
   res.render = () => {
     const Layout = require('views/layouts/main').default;
-    match({ routes, location }, (error, redirectLocation, renderProps) => {
+    match({ routes: getRoutes(req.store.getState()), location }, (error, redirectLocation, renderProps) => {
       if (error) {
         error.status = 501;
         return next(error);

@@ -11,7 +11,7 @@ module.exports = {
     './src/client/index.js',
   ],
   output: {
-    path: path.join(__dirname, 'dist/public'),
+    path: path.join(__dirname, 'dist/client/public'),
     publicPath: '/static/',
     filename: 'javascripts/bundle.js',
     chunkFilename: 'javascripts/[id].bundle.js',
@@ -26,6 +26,7 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('production'),
         'BROWSER' : true,
+        API: JSON.stringify(process.env.API)
       },
     }),
     new ExtractTextPlugin('stylesheets/style.css', {
@@ -56,6 +57,9 @@ module.exports = {
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./src/shared/views/styles")]
   },
   resolve: {
     modulesDirectories: ['node_modules', 'src/shared'],

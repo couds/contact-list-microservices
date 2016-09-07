@@ -24,7 +24,10 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.BROWSER': true,
+      'process.env': {
+        BROWSER: true,
+        API: JSON.stringify(process.env.API)
+      },
     }),
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('stylesheets/style.css', {
@@ -55,6 +58,9 @@ module.exports = {
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, "./src/shared/views/styles")]
   },
   resolve: {
     modulesDirectories: ['node_modules', 'src/shared'],

@@ -11,6 +11,7 @@ class MainLayout extends Component {
           </script>
           <title>Test</title>
           <script async src="/static/javascripts/bundle.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
           <link rel="stylesheet" href="/static/stylesheets/style.css" />
         </head>
         <body>

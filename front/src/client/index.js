@@ -5,8 +5,11 @@ import { createStore } from 'flux/store';
 import { Provider } from 'react-redux';
 
 import { Router, browserHistory, match } from 'react-router';
-import routes from 'routes';
+import getRoutes from 'routes';
 import { fromJS } from 'immutable';
+
+require('views/styles/main.scss');
+require('react-bootstrap/');
 
 function run() {
   const element = document.getElementById('initial-state');
@@ -14,6 +17,7 @@ function run() {
   element.remove();
   const store = createStore(fromJS(initialState));
   window.test = () => store.getState();
+  const routes = getRoutes(store.getState());
   match(({ routes, location }), () => {
     render(
       <Provider store={store} >
