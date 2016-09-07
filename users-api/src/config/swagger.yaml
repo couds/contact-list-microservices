@@ -32,7 +32,7 @@ paths:
             type: array
             items:
               # a pointer to a definition
-              $ref: "#/definitions/User"
+              $ref: "#/definitions/BasicUser"
         # responses may fall through to errors
         default:
           description: Error
@@ -119,6 +119,30 @@ paths:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
 definitions:
+  BasicUser:
+    properties:
+      _id:
+        type: string
+      gender:
+        type: string
+      name:
+        type: object
+        properties:
+          title:
+            type: string
+          first:
+            type: string
+          last:
+            type: string
+      picture:
+        type: object
+        properties:
+          thumbnail:
+            type: string
+          medium:
+            type: string
+          large:
+            type: string
   User:
     properties:
       _id:
