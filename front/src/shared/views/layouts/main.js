@@ -9,7 +9,8 @@ class MainLayout extends Component {
           <script id="initial-state" type="text/json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(this.props.data) }} >
           </script>
-          <title>Test</title>
+          <title>Contact List</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <script async src="/static/javascripts/bundle.js"></script>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
           <link rel="stylesheet" href="/static/stylesheets/style.css" />
