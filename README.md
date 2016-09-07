@@ -6,10 +6,10 @@ NOTE: Please check the Pre-requisites section of each project to ensure you have
 
 ## API
 
-To start this project run on the command line `start:api` 
+To start this project run on the command line `npm run start:api` 
 See [README.md](./users-api/README.md) for more information.
 
 ## FRONT
 
-To start this project run on the command line `start:front`
+To start this project run on the command line `npm run start:front`
 See [README.md](./front/README.md) for more information.
