@@ -2,22 +2,48 @@
 1 verbose cli [ '/usr/local/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
 1 verbose cli   'run',
-1 verbose cli   'start:dev' ]
+1 verbose cli   'start:api' ]
 2 info using npm@3.10.3
 3 info using node@v5.1.0
-4 verbose stack Error: ENOENT: no such file or directory, open '/Users/johnbenavides/projects/contact-list/package.json'
-4 verbose stack     at Error (native)
-5 verbose cwd /Users/johnbenavides/projects/contact-list
-6 error Darwin 15.0.0
-7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "start:dev"
-8 error node v5.1.0
-9 error npm  v3.10.3
-10 error path /Users/johnbenavides/projects/contact-list/package.json
-11 error code ENOENT
-12 error errno -2
-13 error syscall open
-14 error enoent ENOENT: no such file or directory, open '/Users/johnbenavides/projects/contact-list/package.json'
-15 error enoent ENOENT: no such file or directory, open '/Users/johnbenavides/projects/contact-list/package.json'
-15 error enoent This is most likely not a problem with npm itself
-15 error enoent and is related to npm not being able to find a file.
-16 verbose exit [ -2, true ]
+4 verbose run-script [ 'prestart:api', 'start:api', 'poststart:api' ]
+5 info lifecycle contact-list-microservices@1.0.0~prestart:api: contact-list-microservices@1.0.0
+6 silly lifecycle contact-list-microservices@1.0.0~prestart:api: no script for prestart:api, continuing
+7 info lifecycle contact-list-microservices@1.0.0~start:api: contact-list-microservices@1.0.0
+8 verbose lifecycle contact-list-microservices@1.0.0~start:api: unsafe-perm in lifecycle true
+9 verbose lifecycle contact-list-microservices@1.0.0~start:api: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/johnbenavides/projects/contact-list-microservices/node_modules/.bin:/usr/local/bin:/Users/johnbenavides/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+10 verbose lifecycle contact-list-microservices@1.0.0~start:api: CWD: /Users/johnbenavides/projects/contact-list-microservices
+11 silly lifecycle contact-list-microservices@1.0.0~start:api: Args: [ '-c',
+11 silly lifecycle   'cd users-api && npm i && npm run build && npm run seed && npm start' ]
+12 silly lifecycle contact-list-microservices@1.0.0~start:api: Returned: code: 1  signal: null
+13 info lifecycle contact-list-microservices@1.0.0~start:api: Failed to exec start:api script
+14 verbose stack Error: contact-list-microservices@1.0.0 start:api: `cd users-api && npm i && npm run build && npm run seed && npm start`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:242:16)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at EventEmitter.emit (events.js:172:7)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at ChildProcess.emit (events.js:172:7)
+14 verbose stack     at maybeClose (internal/child_process.js:818:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid contact-list-microservices@1.0.0
+16 verbose cwd /Users/johnbenavides/projects/contact-list-microservices
+17 error Darwin 15.0.0
+18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "start:api"
+19 error node v5.1.0
+20 error npm  v3.10.3
+21 error code ELIFECYCLE
+22 error contact-list-microservices@1.0.0 start:api: `cd users-api && npm i && npm run build && npm run seed && npm start`
+22 error Exit status 1
+23 error Failed at the contact-list-microservices@1.0.0 start:api script 'cd users-api && npm i && npm run build && npm run seed && npm start'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the contact-list-microservices package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     cd users-api && npm i && npm run build && npm run seed && npm start
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs contact-list-microservices
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls contact-list-microservices
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
