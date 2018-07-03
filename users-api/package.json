@@ -12,7 +12,9 @@
     "start:dev": "NODE_CONFIG_DIR=./src/config NODE_PATH=./src NODE_ENV=develop nodemon ./src/app.js",
     "seed:dev": "NODE_PATH=./src NODE_ENV=develop node ./src/seed/seed.js",
     "start:dev:debug": "DEBUG=swagger-tools:middleware:validator NODE_CONFIG_DIR=./src/config NODE_PATH=./src nodemon src/app.js",
-    "test": "NODE_CONFIG_DIR=./src/config NODE_PATH=./src NODE_ENV=develop  ./node_modules/mocha/bin/mocha ./tests/accept/*.js --timeout 15000"
+    "test": "NODE_CONFIG_DIR=./src/config NODE_PATH=./src NODE_ENV=develop  ./node_modules/mocha/bin/mocha ./tests/accept/*.js --timeout 15000",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "bluebird": "^3.4.6",
@@ -24,7 +26,8 @@
     "morgan": "^1.7.0",
     "swagger-express-mw": "^0.1.0",
     "swagger-tools": "^0.10.1",
-    "winston": "^2.2.0"
+    "winston": "^2.2.0",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "babel-cli": "6.10.1",
@@ -37,5 +40,6 @@
     "eslint": "2.3.0",
     "mocha": "^3.0.2",
     "nodemon": "^1.10.2"
-  }
+  },
+  "snyk": true
 }
