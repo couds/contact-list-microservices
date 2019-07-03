@@ -10,7 +10,9 @@
     "build:webpack": "NODE_ENV=production NODE_PATH=NODE_PATH:./dist/shared:./dist/server webpack --config webpack.config.production.js --progress --profile --color -p",
     "build:node": "babel -s inline -D src/ -d dist",
     "build": "npm run build:node && npm run build:webpack",
-    "lint": "NODE_PATH=NODE_PATH:./src/shared:./src/server  eslint src"
+    "lint": "NODE_PATH=NODE_PATH:./src/shared:./src/server  eslint src",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "axios": "^0.14.0",
@@ -48,7 +50,8 @@
     "sass-loader": "^4.0.0",
     "serve-favicon": "*",
     "source-map-support": "*",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -81,5 +84,6 @@
     "toolbox-loader": "*",
     "webpack": "*",
     "webpack-dev-server": "*"
-  }
+  },
+  "snyk": true
 }
