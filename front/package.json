@@ -48,7 +48,7 @@
     "sass-loader": "^4.0.0",
     "serve-favicon": "*",
     "source-map-support": "*",
-    "webpack": "^1.13.1"
+    "webpack": "^2.2.0"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -79,7 +79,7 @@
     "sass-loader": "*",
     "style-loader": "*",
     "toolbox-loader": "*",
-    "webpack": "*",
+    "webpack": "2.2.0",
     "webpack-dev-server": "*"
   }
 }
